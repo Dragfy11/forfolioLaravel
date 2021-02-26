@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Footer;
 use App\Models\Header;
 use App\Models\Home;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,6 +14,7 @@ class HomeController extends Controller
         $headers= Header::all();
         $footers=Footer::all();
         $homes=Home::all();
-        return view('welcome', compact('headers','footers','homes'));
+        $titres=Titre::all();
+        return view('welcome', compact('headers','footers','homes','titres'));
     }
 }

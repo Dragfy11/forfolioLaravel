@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,6 +22,15 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call([
             HeaderSeeder::class,
+        ]);
+        $this->call([
+            UserList1Seeder::class,
+        ]);
+        $this->call([
+            UserList2Seeder::class,
+        ]);
+        $this->call([
+            TitreSeeder::class,
         ]);
     }
 }

@@ -2,9 +2,9 @@
     <div class="container">
 
       <div class="section-title">
-        <span>About Me</span>
-        <h2>About Me</h2>
-        <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+      <span>{{$titres[0]->titre}}</span>
+        <h2>{{$titres[0]->titre}}</h2>
+        <p>{{$titres[0]->subtitre}}</p>
       </div>
 
       <div class="row">
@@ -14,18 +14,18 @@
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Name:</strong> Dragfy</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> www.example.com</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +123 456 7890</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>City:</strong> City : Brussels, Belgium</li>
+                <li><i class="icofont-rounded-right"></i> <strong>Name:</strong> {{$userList1[0]->name}}</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> {{$userList1[0]->website}}</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> {{$userList1[0]->phone}}</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>City:</strong> {{$userList1[0]->city}}</li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> 24</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> Master</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> email@example.com</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Available</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> {{$userList2[0]->age}}</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> {{$userList2[0]->degree}}</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> {{$userList2[0]->mail}}</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> {{$userList2[0]->freelance}}</li>
                 </ul>
               </div>
             </div>
