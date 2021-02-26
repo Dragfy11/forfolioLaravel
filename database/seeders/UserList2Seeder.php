@@ -17,11 +17,25 @@ class UserList2Seeder extends Seeder
         DB::table('user_list2s')->insert(
             [
                 [
-                    'age'=> 24,
-                    'degree'=>"Master",
-                    'mail'=>'email@example.com',
-                    'freelance'=>'Available'
-                ]
+                    'titre'=>'Age',
+                    'subtitre'=> '24'
+                    
+                ],
+                [
+                    'titre'=>'Degree',
+                    'subtitre'=> 'Master'
+                    
+                ],
+                [
+                    'titre'=>'Email',
+                    'subtitre'=> 'email@example.com'
+                    
+                ],
+                [
+                    'titre'=>'Freelance',
+                    'subtitre'=> 'Available'
+                    
+                ],
             ]
         );
     }

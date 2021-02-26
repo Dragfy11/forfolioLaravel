@@ -15,10 +15,8 @@ class CreateUserList2sTable extends Migration
     {
         Schema::create('user_list2s', function (Blueprint $table) {
             $table->id();
-            $table->integer('age');
-            $table->string('degree');
-            $table->string('mail');
-            $table->string('freelance');
+            $table->string('titre');
+            $table->string('subtitre');
             $table->timestamps();
         });
     }

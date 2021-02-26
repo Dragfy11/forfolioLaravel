@@ -32,5 +32,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TitreSeeder::class,
         ]);
+        $this->call([
+            UserList4Seeder::class,
+        ]);
     }
 }

@@ -16,12 +16,23 @@ class UserList1Seeder extends Seeder
     {
         DB::table('user_list1s')->insert(
             [
+                
                 [
-                    'name'=>'Dragfy',
-                    'website'=>"www.example.com",
-                    'phone'=>'+123 456 7890',
-                    'city'=>'Brussels, Belgium'
-                ]
+                    'titre'=>'Name',
+                    'subtitre'=>'Dragfy',
+                ],
+                [
+                    'titre'=>'Website',
+                    'subtitre'=>'www.example.com',
+                ],
+                [
+                    'titre'=>'Phone',
+                    'subtitre'=>'+123 456 7890',
+                ],
+                [
+                    'titre'=>'City',
+                    'subtitre'=>'Brussels, Belgium',
+                ],
             ]
         );
     }
