@@ -39,7 +39,7 @@ class TitreSeeder extends Seeder
                 [
                     'titre'=>'Contact me',
                     'subtitre'=>"Sit sint consectetur velit quisquam cupiditate impedit suscipit alias"
-                ],
+                ]
             ]
         );
     }

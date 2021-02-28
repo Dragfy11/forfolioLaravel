@@ -15,31 +15,25 @@
           <div class="row">
             <div class="col-md-12">
               <div class="info-box">
-                <i class="bx bx-share-alt"></i>
-                <h3>Social Profiles</h3>
+                <i class="{{$contactIcons[0]->icon}}"></i>
+                <h3>{{$contactIcons[0]->titre}}</h3>
                 <div class="social-links">
-                  <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-                  <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-                  <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-                  <a href="#" class="google-plus"><i class="icofont-skype"></i></a>
-                  <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+                  @foreach ($contactList as $itemContact)
+                    <a href="{{$itemContact->ref}}" class="{{$itemContact->class}}"><i class="{{$itemContact->icon}}"></i></a>
+                  @endforeach
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="info-box mt-4">
-                <i class="bx bx-envelope"></i>
-                <h3>Email Me</h3>
-                <p>contact@example.com</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="info-box mt-4">
-                <i class="bx bx-phone-call"></i>
-                <h3>Call Me</h3>
-                <p>+1 5589 55488 55</p>
-              </div>
-            </div>
+            @foreach ($contactList2 as $itemContact2)
+               <div class="col-md-6">
+                  <div class="info-box mt-4">
+                    <i class="{{$itemContact2->icon}}"></i>
+                    <h3>{{$itemContact2->titre}}</h3>
+                    <p>{{$itemContact2->text}}</p>
+                  </div>
+                </div> 
+            @endforeach
+            
           </div>
 
         </div>

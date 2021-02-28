@@ -65,5 +65,14 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ImagePortfolioSeeder::class,
         ]);
+        $this->call([
+            Contact1Seeder::class,
+        ]);
+        $this->call([
+            ContactIconSeeder::class,
+        ]);
+        $this->call([
+            Contact2Seeder::class,
+        ]);
     }
 }
