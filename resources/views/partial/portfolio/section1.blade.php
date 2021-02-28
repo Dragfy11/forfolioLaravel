@@ -3,9 +3,9 @@
     <div class="container">
 
       <div class="section-title">
-        <span>My Portfolio</span>
-        <h2>My Portfolio</h2>
-        <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+        <span>{{$titres[3]->titre}}</span>
+        <h2>{{$titres[3]->titre}}</h2>
+        <p>{{$titres[3]->subtitre}}</p>
       </div>
 
       <ul id="portfolio-flters" class="d-flex justify-content-center">

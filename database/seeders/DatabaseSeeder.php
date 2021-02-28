@@ -35,5 +35,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserList4Seeder::class,
         ]);
+        $this->call([
+            UserTimeListSeeder::class,
+        ]);
     }
 }

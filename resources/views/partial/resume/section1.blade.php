@@ -3,9 +3,9 @@
     <div class="container">
 
       <div class="section-title">
-        <span>My Resume</span>
-        <h2>My Resume</h2>
-        <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+        <span>{{$titres[1]->titre}}</span>
+        <h2>{{$titres[1]->titre}}</h2>
+        <p>{{$titres[1]->subtitre}}</p>
       </div>
 
       <div class="row">

@@ -18,6 +18,7 @@
                       <li><i class="icofont-rounded-right"></i> <strong>{{$userList1s->titre}}:</strong> {{$userList1s->subtitre}}</li>
                   @endforeach
                   
+
                 </ul>
               </div>
               <div class="col-lg-6">
@@ -30,38 +31,18 @@
               </div>
             </div>
             <div class="row mt-n4">
-              <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="icofont-simple-smile" style="color: #20b38e;"></i>
-                  <span data-toggle="counter-up">65</span>
-                  <p><strong>Happy Clients</strong> consequuntur voluptas nostrum aliquid ipsam architecto ut.</p>
-                </div>
-              </div>
+              @foreach ($userTime as $userTimes)
+                  <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                      <i class="{{$userTimes->icon}}" style="color: {{$userTimes->color}};"></i>
+                      <span data-toggle="counter-up">{{$userTimes->chiffre}}</span>
+                      <p><strong>{{$userTimes->text1}}</strong> {{$userTimes->text2}}</p>
+                    </div>
+                  </div>
+              @endforeach
+              
 
-              <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="icofont-document-folder" style="color: #8a1ac2;"></i>
-                  <span data-toggle="counter-up">85</span>
-                  <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="icofont-clock-time" style="color: #2cbdee;"></i>
-                  <span data-toggle="counter-up">12</span>
-                  <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 mt-5 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="icofont-award" style="color: #ffb459;"></i>
-                  <span data-toggle="counter-up">15</span>
-                  <p><strong>Awards</strong> rerum asperiores dolor alias quo reprehenderit eum et nemo pad der</p>
-                </div>
-              </div>
-            </div>
+              
           </div><!-- End .content-->
 
           <div class="skills-content pl-lg-4">
@@ -74,7 +55,6 @@
                 </div>
             @endforeach
             
-
           </div>
 
         </div>

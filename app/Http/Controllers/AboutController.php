@@ -8,6 +8,7 @@ use App\Models\Titre;
 use App\Models\UserList1;
 use App\Models\UserList2;
 use App\Models\UserList4;
+use App\Models\UserTimeList;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -19,6 +20,7 @@ class AboutController extends Controller
         $userList2=UserList2::all();
         $titres=Titre::all();
         $userList4=UserList4::all();
-        return view('pages.about', compact('headers','footers','userList1','userList2','titres','userList4'));
+        $userTime=UserTimeList::all();
+        return view('pages.about', compact('headers','footers','userList1','userList2','titres','userList4','userTime'));
     }
 }
