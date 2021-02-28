@@ -56,5 +56,14 @@ class DatabaseSeeder extends Seeder
         $this->call([
             Service2Seeder::class,
         ]);
+        $this->call([
+            PricingSeeder::class,
+        ]);
+        $this->call([
+            TitrePortfolioSeeder::class,
+        ]);
+        $this->call([
+            ImagePortfolioSeeder::class,
+        ]);
     }
 }

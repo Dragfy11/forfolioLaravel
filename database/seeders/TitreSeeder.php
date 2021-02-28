@@ -33,6 +33,10 @@ class TitreSeeder extends Seeder
                     'subtitre'=>"Sit sint consectetur velit quisquam cupiditate impedit suscipit alias"
                 ],
                 [
+                    'titre'=>'Pricing',
+                    'subtitre'=>"Sit sint consectetur velit quisquam cupiditate impedit suscipit alias"
+                ],
+                [
                     'titre'=>'Contact me',
                     'subtitre'=>"Sit sint consectetur velit quisquam cupiditate impedit suscipit alias"
                 ],
