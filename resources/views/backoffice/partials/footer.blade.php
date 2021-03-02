@@ -21,10 +21,19 @@
               <td>{{$item->copy}}</td>
               <td>{{$item->designed}}</td>
               <td>{{$item->img}}</td>
+              <td><a class="btn btn-primary" href="/backoffice-showFooter/{{$item->id}}">show</a></td>
+              <td>
+                <form action="/backoffice-deleteFooter/{{$item->id}}" method="post">
+                    @csrf
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+                
+            </td>
               </tr> 
             @endforeach
-         
+            
         </tbody>
       </table>
+      @include('backoffice.partials.create.createFooter')
     </form>
   </section>

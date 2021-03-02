@@ -15,10 +15,21 @@
               <th scope="row">{{$item->id}}</th>
               <td>{{$item->ref}}</td>
               <td>{{$item->titre}}</td>
+              <td><a class="btn btn-primary" href="/backoffice-showHeader/{{$item->id}}">show</a></td>
+              <td>
+                <form action="/backoffice-deleteHeader/{{$item->id}}" method="post">
+                    @csrf
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+                
+            </td>
               </tr> 
             @endforeach
          
+              
+
         </tbody>
       </table>
+      @include('backoffice.partials.create.createHeader')
     </form>
   </section>
