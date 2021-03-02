@@ -26,6 +26,7 @@
                     <button class="btn btn-danger">Delete</button>
                 </form>
               </td>
+              <td><a class="btn btn-primary" href="/backoffice/services-editService2/{{$item->id}}">Edit</a></td>
               </tr> 
             @endforeach
          

@@ -25,6 +25,7 @@
                 </form>
                 
             </td>
+            <td><a class="btn btn-primary" href="/backoffice/contact-editContact2/{{$item->id}}">Edit</a></td>
               </tr> 
             @endforeach
          

@@ -75,5 +75,33 @@ class ContactController extends Controller
         $destroyContactIcon->delete();
         return redirect()->back();
     }
+    public function editContact1($id){
+        $editContact1 = Contact1::find($id);
+        return view('backoffice.partials.edit.editContact1',compact('editContact1'));
+    }
+
+    public function updateContact1(Request $request, $id)
+    {
+        $updateContact1 = Contact1::find($id);
+        $updateContact1->ref = $request->ref;
+        $updateContact1->class = $request->class;
+        $updateContact1->icon = $request->icon;
+        $updateContact1->save();
+        return redirect()->back();
+    }
+    public function editContact12($id){
+        $editContact2 = Contact2::find($id);
+        return view('backoffice.partials.edit.editContact2',compact('editContact2'));
+    }
+
+    public function updateContact2(Request $request, $id)
+    {
+        $updateContact2 = Contact1::find($id);
+        $updateContact2->icon = $request->icon;
+        $updateContact2->titre = $request->titre;
+        $updateContact2->text = $request->text;
+        $updateContact2->save();
+        return redirect()->back();
+    }
 
 }

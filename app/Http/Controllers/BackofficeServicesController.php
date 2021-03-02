@@ -50,4 +50,32 @@ class BackofficeServicesController extends Controller
         $destroyService2->delete();
         return redirect()->back();
     }
+    public function editService1($id){
+        $editService1 = Service1::find($id);
+        return view('backoffice.partials.edit.editService1',compact('editService1'));
+    }
+
+    public function updateService1(Request $request, $id)
+    {
+        $updateService1 = Service1::find($id);
+        $updateService1->titre = $request->titre;
+        $updateService1->text = $request->text;
+        $updateService1->icon = $request->icon;
+        $updateService1->save();
+        return redirect()->back();
+    }
+    public function editService2($id){
+        $editService2 = Service2::find($id);
+        return view('backoffice.partials.edit.editService2',compact('editService2'));
+    }
+
+    public function updateService2(Request $request, $id)
+    {
+        $updateService2 = Service2::find($id);
+        $updateService2->titre = $request->titre;
+        $updateService2->subtitre = $request->subtitre;
+        $updateService2->imgsrc = $request->imgsrc;
+        $updateService2->save();
+        return redirect()->back();
+    }
 }
