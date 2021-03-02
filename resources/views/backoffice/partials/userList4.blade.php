@@ -15,10 +15,20 @@
               <th scope="row">{{$item->id}}</th>
               <td>{{$item->titre}}</td>
               <td>{{$item->chiffre}}</td>
+              <td><a class="btn btn-primary" href="/backoffice/about-showUserList4/{{$item->id}}">show</a></td>
+              <td>
+                <form action="/backoffice/about-deleteUserList4/{{$item->id}}" method="post">
+                    @csrf
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+                
+            </td>
+            <td><a class="btn btn-primary" href="/backoffice/about-editUserList4/{{$item->id}}">Edit</a></td>
               </tr> 
             @endforeach
          
         </tbody>
       </table>
+      @include('backoffice.partials.create.createUserList4')
     </form>
   </section>

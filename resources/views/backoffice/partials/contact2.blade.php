@@ -17,10 +17,19 @@
               <td>{{$item->icon}}</td>
               <td>{{$item->titre}}</td>
               <td>{{$item->text}}</td>
+              <td><a class="btn btn-primary" href="/backoffice/contact-showContact2/{{$item->id}}">show</a></td> 
+              <td>
+                <form action="/backoffice/contact-deleteContact2/{{$item->id}}" method="post">
+                    @csrf
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+                
+            </td>
               </tr> 
             @endforeach
          
         </tbody>
       </table>
+      @include('backoffice.partials.create.createContact2')
     </form>
   </section>

@@ -29,6 +29,7 @@
                 </form>
                 
             </td>
+            <td><a class="btn btn-primary" href="/backoffice-editFooter/{{$item->id}}">Edit</a></td>
               </tr> 
             @endforeach
             

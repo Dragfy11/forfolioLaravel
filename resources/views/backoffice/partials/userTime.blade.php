@@ -21,10 +21,20 @@
               <td>{{$item->text2}}</td>
               <td>{{$item->icon}}</td>
               <td>{{$item->color}}</td>
+              <td><a class="btn btn-primary" href="/backoffice/about-showUserTimeList/{{$item->id}}">show</a></td>
+              <td>
+                <form action="/backoffice/about-deleteUserTimeList/{{$item->id}}" method="post">
+                    @csrf
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+                
+            </td>
+            <td><a class="btn btn-primary" href="/backoffice/about-editUserTimeList/{{$item->id}}">Edit</a></td>
               </tr> 
             @endforeach
          
         </tbody>
       </table>
+      @include('backoffice.partials.create.createUserTimeList')
     </form>
   </section>

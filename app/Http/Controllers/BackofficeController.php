@@ -70,4 +70,47 @@ class BackofficeController extends Controller
         $destroyTitre->delete();
         return redirect()->back();
     }
+    public function editHeader($id){
+        $editHeader = Header::find($id);
+        return view('backoffice.partials.edit.editHeader',compact('editHeader'));
+    }
+
+    public function updateHeader(Request $request, $id)
+    {
+        $updateHeader = Header::find($id);
+        $updateHeader->ref = $request->ref;
+        $updateHeader->titre = $request->titre;
+        $updateHeader->save();
+        return redirect()->back();
+    }
+    public function editFooter($id){
+        $editFooter = Footer::find($id);
+        return view('backoffice.partials.edit.editFooter',compact('editFooter'));
+    }
+
+    public function updateFooter(Request $request, $id)
+    {
+        $updateFooter = Footer::find($id);
+        $updateFooter->titre = $request->titre;
+        $updateFooter->subtitre = $request->subtitre;
+        $updateFooter->copy = $request->copy;
+        $updateFooter->designed = $request->designed;
+        $updateFooter->img = $request->img;
+        $updateFooter->save();
+        return redirect()->back();
+    }
+    public function editTitre($id){
+        $editTitre = Titre::find($id);
+        return view('backoffice.partials.edit.editTitre',compact('editTitre'));
+    }
+
+    public function updateTitre(Request $request, $id)
+    {
+        $updateTitre = Titre::find($id);
+        $updateTitre->titre = $request->titre;
+        $updateTitre->subtitre = $request->subtitre;
+        $updateTitre->save();
+        return redirect()->back();
+    }
+
 }

@@ -49,23 +49,42 @@ Route::post('/backoffice-deleteHeader/{id}',[BackofficeController::class,'destro
 Route::post('/backoffice-deleteFooter/{id}',[BackofficeController::class,'destroyFooter']);
 Route::post('/backoffice-deleteTitre/{id}',[BackofficeController::class,'destroyTitre']);
 
+Route::get('/backoffice-editHeader/{id}',[BackofficeController::class,'editHeader']);
+Route::post('/backoffice-updateHeader/{id}',[BackofficeController::class,'updateHeader']);
+
+Route::get('/backoffice-editFooter/{id}',[BackofficeController::class,'editFooter']);
+Route::post('/backoffice-updateFooter/{id}',[BackofficeController::class,'updateFooter']);
+
+Route::get('/backoffice-editTitre/{id}',[BackofficeController::class,'editTitre']);
+Route::post('/backoffice-updateTitre/{id}',[BackofficeController::class,'updateTitre']);
+
+
 
 
 //about
 
 Route::get('/backoffice/about',[BackofficeAboutController::class, 'index']);
 
-Route::post('/backoffice/about-storeHeader', [BackofficeAboutController::class, 'storeHeader']);
-Route::post('/backoffice/about-storeFooter', [BackofficeAboutController::class, 'storeFooter']);
-Route::post('/backoffice/about-storeTitre', [BackofficeAboutController::class, 'storeTitre']);
+Route::post('/backoffice/about-storeUserList1', [BackofficeAboutController::class, 'storeUserList1']);
+Route::post('/backoffice/about-storeUserList2', [BackofficeAboutController::class, 'storeUserList2']);
 
-Route::get('/backoffice/about-showHeader/{id}',[BackofficeAboutController::class,'showHeader']);
-Route::get('/backoffice/about-showFooter/{id}',[BackofficeAboutController::class,'showFooter']);
-Route::get('/backoffice/about-showTitre/{id}',[BackofficeAboutController::class,'showTitre']);
 
-Route::post('/backoffice/about-deleteHeader/{id}',[BackofficeAboutController::class,'destroyHeader']);
-Route::post('/backoffice/about-deleteFooter/{id}',[BackofficeAboutController::class,'destroyFooter']);
-Route::post('/backoffice/about-deleteTitre/{id}',[BackofficeAboutController::class,'destroyTitre']);
+Route::get('/backoffice/about-showUserList1/{id}',[BackofficeAboutController::class,'showUserList1']);
+Route::get('/backoffice/about-showUserList2/{id}',[BackofficeAboutController::class,'showUserList2']);
+
+
+Route::post('/backoffice/about-deleteUserList1/{id}',[BackofficeAboutController::class,'destroyUserList1']);
+Route::post('/backoffice/about-deleteUserList2/{id}',[BackofficeAboutController::class,'destroyUserList2']);
+
+
+Route::get('/backoffice/about-editUserList1/{id}',[BackofficeAboutController::class,'editUserList1']);
+Route::post('/backoffice/about-updateUserList1/{id}',[BackofficeAboutController::class,'updateUserList1']);
+Route::get('/backoffice/about-editUserList2/{id}',[BackofficeAboutController::class,'editUserList2']);
+Route::post('/backoffice/about-updateUserList2/{id}',[BackofficeAboutController::class,'updateUserList2']);
+Route::get('/backoffice/about-editUserList4/{id}',[BackofficeAboutController::class,'editUserList4']);
+Route::post('/backoffice/about-updateUserList4/{id}',[BackofficeAboutController::class,'updateUserList4']);
+Route::get('/backoffice/about-editUserTimeList/{id}',[BackofficeAboutController::class,'editUserTimeList']);
+Route::post('/backoffice/about-updateUserTimeList/{id}',[BackofficeAboutController::class,'updateUserTimeList']);
 
 //resume
 Route::get('/backoffice/resume',[BackofficeResumeController::class, 'index']);
@@ -73,6 +92,7 @@ Route::get('/backoffice/resume',[BackofficeResumeController::class, 'index']);
 Route::post('/backoffice/resume-storeHeader', [BackofficeResumeController::class, 'storeHeader']);
 Route::post('/backoffice/resume-storeFooter', [BackofficeResumeController::class, 'storeFooter']);
 Route::post('/backoffice/resume-storeTitre', [BackofficeResumeController::class, 'storeTitre']);
+
 
 Route::get('/backoffice/resume-showHeader/{id}',[BackofficeResumeController::class,'showHeader']);
 Route::get('/backoffice/resume-showFooter/{id}',[BackofficeResumeController::class,'showFooter']);
@@ -97,4 +117,18 @@ Route::post('/backoffice/services-deleteService2/{id}',[BackofficeServicesContro
 //portfolio
 
 Route::get('/backoffice/portfolio',[BackofficePortfolioController::class, 'index']);
+
+//contact
 Route::get('/backoffice/contact',[BackofficeContactController::class, 'index']);
+
+Route::post('/backoffice/contact-storeContact1', [BackofficeContactController::class, 'storeContact1']);
+Route::post('/backoffice/contact-storeContact2', [BackofficeContactController::class, 'storeContact2']);
+Route::post('/backoffice/contact-storeContactIcon', [BackofficeContactController::class, 'storeContactIcon']);
+
+Route::get('/backoffice/contact-showContact1/{id}',[BackofficeContactController::class,'showService1']);
+Route::get('/backoffice/contact-showContact2/{id}',[BackofficeContactController::class,'showContact2']);
+Route::get('/backoffice/contact-showContactIcon/{id}',[BackofficeContactController::class,'showContactIcon']);
+
+Route::post('/backoffice/contact-deleteContact1/{id}',[BackofficeContactController::class,'destroyContact1']);
+Route::post('/backoffice/contact-deleteContact2/{id}',[BackofficeContactController::class,'destroyContact2']);
+Route::post('/backoffice/contact-deleteContactIcon/{id}',[BackofficeContactController::class,'destroyContactIcon']);
