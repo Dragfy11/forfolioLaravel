@@ -36,6 +36,9 @@ class DatabaseSeeder extends Seeder
             UserList4Seeder::class,
         ]);
         $this->call([
+            UserTimeListSeeder::class,
+        ]);
+        $this->call([
             ResumeList1Seeder::class,
         ]);
         $this->call([
