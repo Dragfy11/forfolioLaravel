@@ -13,7 +13,7 @@
         <div class="card" style="width: 18rem;">
               <div class="card-body">
                   <h5 class="card-title">{{$showPortfolioImg->id}}</h5>
-                  <h5 class="card-title">filter: {{$showPortfolioImg->titre}}</h5>
+                  <h5 class="card-title">filter: {{$showPortfolioImg->filter}}</h5>
                   <h5 class="card-title">imgsrc: {{$showPortfolioImg->imgsrc}}</h5>
                   <h5 class="card-title">titre1: {{$showPortfolioImg->titre1}}</h5>
                   <h5 class="card-title">desc: {{$showPortfolioImg->desc}}</h5>

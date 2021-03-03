@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="/backoffice/Pricings-storePricings" method="POST">
+    <form action="/backoffice/portfolio-storePricings" method="POST">
         @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">Titre</label>
@@ -7,7 +7,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">chiffre</label>
-            <input type="number" name="chiffre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="chiffre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">text1</label>

@@ -10,7 +10,7 @@
 <body>
 
     <div class="container mt-5">
-    <form action="/backoffice/Pricings-updatePricings/{{$editPricings->id}}" method="post">
+    <form action="/backoffice/portfolio-updatePricings/{{$editPricings->id}}" method="post">
             @csrf
             <div class="form-group">
               <label for="exampleInputEmail1">titre</label>

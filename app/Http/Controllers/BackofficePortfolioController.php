@@ -72,7 +72,7 @@ class BackofficePortfolioController extends Controller
     public function storePortfolioImg(Request $request)
     {
         $storePortfolioImg = new ImagePortfolio;
-        $storePortfolioImg->filer = $request->filer;
+        $storePortfolioImg->filter = $request->filter;
         $storePortfolioImg->imgsrc = $request->imgsrc;
         $storePortfolioImg->titre1 = $request->titre1;
         $storePortfolioImg->desc = $request->desc;

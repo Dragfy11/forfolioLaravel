@@ -50,7 +50,7 @@ class BackofficeContactController extends Controller
         return view('backoffice.partials.show.showContact2',compact('showContact2'));
     }
     public function showContactIcon($id){
-        $showContactIcon2=ContactIcon::find($id);
+        $showContactIcon=ContactIcon::find($id);
         return view('backoffice.partials.show.showContactIcon',compact('showContactIcon'));
     }
     public function destroyContact1($id){
@@ -82,18 +82,31 @@ class BackofficeContactController extends Controller
         $updateContact1->save();
         return redirect()->back();
     }
-    public function editContact12($id){
+    public function editContact2($id){
         $editContact2 = Contact2::find($id);
         return view('backoffice.partials.edit.editContact2',compact('editContact2'));
     }
 
     public function updateContact2(Request $request, $id)
     {
-        $updateContact2 = Contact1::find($id);
+        $updateContact2 = Contact2::find($id);
         $updateContact2->icon = $request->icon;
         $updateContact2->titre = $request->titre;
         $updateContact2->text = $request->text;
         $updateContact2->save();
+        return redirect()->back();
+    }
+    public function editContactIcon($id){
+        $editContactIcon = ContactIcon::find($id);
+        return view('backoffice.partials.edit.editContactIcon',compact('editContactIcon'));
+    }
+
+    public function updateContactIcon(Request $request, $id)
+    {
+        $updateContactIcon = ContactIcon::find($id);
+        $updateContactIcon->icon = $request->icon;
+        $updateContactIcon->titre = $request->titre;
+        $updateContactIcon->save();
         return redirect()->back();
     }
 }
