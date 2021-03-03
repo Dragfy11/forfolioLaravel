@@ -21,7 +21,7 @@
                     @csrf
                     <button class="btn btn-danger">Delete</button>
                 </form>
-                
+                <td><a class="btn btn-primary" href="/backoffice/contact-editContactIcon/{{$item->id}}">Edit</a></td>
             </td>
               </tr> 
             @endforeach

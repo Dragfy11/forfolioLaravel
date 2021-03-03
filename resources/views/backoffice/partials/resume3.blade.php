@@ -25,10 +25,19 @@
               <td>{{$item->text2}}</td>
               <td>{{$item->text3}}</td>
               <td>{{$item->text4}}</td>
+              <td><a class="btn btn-primary" href="/backoffice/resume-showResume3/{{$item->id}}">show</a></td>
+              <td>
+                <form action="/backoffice/resume-deleteResume3/{{$item->id}}" method="post">
+                    @csrf
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+              </td>
+              <td><a class="btn btn-primary" href="/backoffice/resume-editResume3/{{$item->id}}">Edit</a></td>
               </tr> 
             @endforeach
          
         </tbody>
       </table>
+      @include('backoffice.partials.create.createResume3')
     </form>
   </section>

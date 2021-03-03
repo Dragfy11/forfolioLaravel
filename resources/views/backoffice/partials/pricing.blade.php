@@ -29,10 +29,19 @@
               <td>{{$item->text5}}</td>
               <td>{{$item->text6}}</td>
               <td>{{$item->btn}}</td>
+              <td><a class="btn btn-primary" href="/backoffice/portfolio-showPricings/{{$item->id}}">show</a></td>
+              <td>
+              <form action="/backoffice/portfolio-deletePricings/{{$item->id}}" method="post">
+                @csrf
+                <button class="btn btn-danger">Delete</button>
+            </form>
+          </td>
+          <td><a class="btn btn-primary" href="/backoffice/portfolio-editPricings/{{$item->id}}">Edit</a></td>
               </tr> 
             @endforeach
          
         </tbody>
       </table>
+      @include('backoffice.partials.create.createPricings')
     </form>
   </section>

@@ -23,10 +23,19 @@
               <td>{{$item->desc}}</td>
               <td>{{$item->titre2}}</td>
               <td>{{$item->ref}}</td>
+              <td><a class="btn btn-primary" href="/backoffice/portfolio-showPortfolioImg/{{$item->id}}">show</a></td>
+              <td>
+                <form action="/backoffice/portfolio-deletePortfolioImg/{{$item->id}}" method="post">
+                    @csrf
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+              </td>
+              <td><a class="btn btn-primary" href="/backoffice/portfolio-editPortfolioImg/{{$item->id}}">Edit</a></td>
               </tr> 
             @endforeach
          
         </tbody>
       </table>
+      @include('backoffice.partials.create.createPortfolioImg')
     </form>
   </section>

@@ -17,10 +17,19 @@
               <td>{{$item->titre}}</td>
               <td>{{$item->subtitre}}</td>
               <td>{{$item->text}}</td>
+              <td><a class="btn btn-primary" href="/backoffice/resume-showResumeTitre/{{$item->id}}">show</a></td>
+              <td>
+                <form action="/backoffice/resume-deleteResumeTitre/{{$item->id}}" method="post">
+                    @csrf
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+              </td>
+              <td><a class="btn btn-primary" href="/backoffice/resume-editResumeTitre/{{$item->id}}">Edit</a></td>
               </tr> 
             @endforeach
          
         </tbody>
       </table>
+      @include('backoffice.partials.create.createResumeTitre')
     </form>
   </section>
