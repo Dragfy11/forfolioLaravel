@@ -6,6 +6,7 @@ use App\Models\ImagePortfolio;
 use App\Models\pricing;
 use App\Models\TitrePortfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BackofficePortfolioController extends Controller
 {
@@ -73,7 +74,8 @@ class BackofficePortfolioController extends Controller
     {
         $storePortfolioImg = new ImagePortfolio;
         $storePortfolioImg->filter = $request->filter;
-        $storePortfolioImg->imgsrc = $request->imgsrc;
+        $storePortfolioImg->imgsrc = $request->file('imgsrc')->hashName();
+        Storage::put('public/img/', $request->file('imgsrc'));
         $storePortfolioImg->titre1 = $request->titre1;
         $storePortfolioImg->desc = $request->desc;
         $storePortfolioImg->titre2 = $request->titre2;
@@ -106,6 +108,11 @@ class BackofficePortfolioController extends Controller
         $updatePortfolioImg->ref = $request->ref;
         $updatePortfolioImg->save();
         return redirect()->back();
+    }
+    public function download($id)
+    {
+        $down = ImagePortfolio::find($id);
+        return Storage::download('public/img/'.$down->imgsrc);
     }
 
 

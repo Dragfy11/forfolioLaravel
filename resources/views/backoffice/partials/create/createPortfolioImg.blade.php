@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="/backoffice/portfolio-storePortfolioImg" method="POST">
+    <form action="/backoffice/portfolio-storePortfolioImg" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">filter</label>
@@ -7,7 +7,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">imgsrc</label>
-            <input type="text" name="imgsrc" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="file" name="imgsrc" class="form-control">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">titre1</label>

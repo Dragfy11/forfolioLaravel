@@ -174,7 +174,6 @@ Route::post('/backoffice/services-updateService2/{id}',[BackofficeServicesContro
 
 Route::get('/backoffice/portfolio',[BackofficePortfolioController::class, 'index']);
 
-
 Route::post('/backoffice/portfolio-storePricings', [BackofficePortfolioController::class, 'storePricings']);
 Route::get('/backoffice/portfolio-showPricings/{id}',[BackofficePortfolioController::class,'showPricings']);
 Route::post('/backoffice/porfolio-deletePricings/{id}',[BackofficePortfolioController::class,'destroyPricings']);
@@ -186,6 +185,7 @@ Route::post('/backoffice/portfolio-updatePricings/{id}',[BackofficePortfolioCont
 
 
 Route::post('/backoffice/portfolio-storePortfolioImg', [BackofficePortfolioController::class, 'storePortfolioImg']);
+Route::get('/download-img/{id}', [BackofficePortfolioController::class, 'download']);
 Route::get('/backoffice/portfolio-showPortfolioImg/{id}',[BackofficePortfolioController::class,'showPortfolioImg']);
 Route::post('/backoffice/porfolio-deletePortfolioImg/{id}',[BackofficePortfolioController::class,'destroyPortfolioImg']);
 Route::get('/backoffice/portfolio-editPortfolioImg/{id}',[BackofficePortfolioController::class,'editPortfolioImg']);

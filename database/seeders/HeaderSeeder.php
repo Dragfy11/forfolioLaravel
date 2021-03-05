@@ -40,10 +40,6 @@ class HeaderSeeder extends Seeder
                     'ref'=>'/contact',
                     'titre'=>"Contact"
                 ],
-                [
-                    'ref'=>'/backoffice',
-                    'titre'=>"Backoffice"
-                ],
             ]
         );
     }

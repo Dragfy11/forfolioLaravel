@@ -1,6 +1,7 @@
 <section class="container mt-5">
     <h1>imagePortfolios</h1>
-    <form action="">
+    <form action="/backoffice/portfolio-storePortfolioImg" enctype="multipart/form-data">
+      @csrf
       <table class="table">
         <thead>
           <tr>
