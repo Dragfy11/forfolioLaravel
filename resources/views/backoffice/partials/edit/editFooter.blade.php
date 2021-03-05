@@ -10,27 +10,36 @@
 <body>
 
     <div class="container mt-5">
+      @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
     <form action="/backoffice-updateFooter/{{$editFooter->id}}" method="post">
             @csrf
             <div class="form-group">
               <label for="exampleInputEmail1">titre</label>
-            <input type="text" name="titre" value="{{$editFooter->titre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="titre" value="{{old("titre") ? old("titre") :$editFooter->titre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">subtitre</label>
-            <input type="text" name="subtitre" value="{{$editFooter->subtitre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="subtitre" value="{{old("subtitre") ? old("subtitre") :$editFooter->subtitre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">copy</label>
-            <input type="text" name="copy" value="{{$editFooter->copy}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="copy" value="{{old("copy") ? old("copy") :$editFooter->copy}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">designed</label>
-            <input type="text" name="designed" value="{{$editFooter->designed}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="designed" value="{{old("designed") ? old("designed") :$editFooter->designed}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Img</label>
-            <input type="text" name="img" value="{{$editFooter->img}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="img" value="{{old("img") ? old("img") :$editFooter->img}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>

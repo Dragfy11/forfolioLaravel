@@ -32,7 +32,8 @@
                 </form>
               </td>
               <td><a class="btn btn-primary" href="/backoffice/portfolio-editPortfolioImg/{{$item->id}}">Edit</a></td>
-              </tr> 
+              </tr>
+              <td><a class="btn btn-warning" href="/download-img/{{$item->id}}">download</a></td>
             @endforeach
          
         </tbody>

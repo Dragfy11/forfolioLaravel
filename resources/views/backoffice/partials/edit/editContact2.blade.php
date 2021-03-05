@@ -10,19 +10,28 @@
 <body>
 
     <div class="container mt-5">
+      @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
     <form action="/backoffice/contact-updateContact2/{{$editContact2->id}}" method="post">
             @csrf
             <div class="form-group">
               <label for="exampleInputEmail1">icon</label>
-            <input type="text" name="icon" value="{{$editContact2->icon}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="icon" value="{{old("icon") ? old("icon") :$editContact2->icon}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">titre</label>
-            <input type="text" name="titre" value="{{$editContact2->titre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="titre" value="{{old("titre") ? old("titre") :$editContact2->titre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">text</label>
-            <input type="text" name="text" value="{{$editContact2->text}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="text" value="{{old("text") ? old("text") :$editContact2->text}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>

@@ -10,19 +10,28 @@
 <body>
 
     <div class="container mt-5">
+      @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
     <form action="/backoffice/resume-updateResumeTitre/{{$editResumeTitre->id}}" method="post">
             @csrf
             <div class="form-group">
               <label for="exampleInputEmail1">titre</label>
-            <input type="text" name="titre" value="{{$editResumeTitre->titre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="titre" value="{{old("titre") ? old("titre") :$editResumeTitre->titre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">subtitre</label>
-              <input type="text" name="subtitre" value="{{$editResumeTitre->subtitre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="subtitre" value="{{old("subtitre") ? old("subtitre") :$editResumeTitre->subtitre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Text</label>
-              <input type="text" name="text" value="{{$editResumeTitre->text}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="text" value="{{old("text") ? old("text") :$editResumeTitre->text}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>

@@ -19,6 +19,13 @@ class BackofficeAboutController extends Controller
     }
     public function storeUserList1(Request $request)
     {
+
+        $validUserList=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required'
+
+        ]);
+
         $storeUserList1 = new UserList1;
         $storeUserList1->titre = $request->titre;
         $storeUserList1->subtitre = $request->subtitre;
@@ -36,6 +43,12 @@ class BackofficeAboutController extends Controller
     }
     public function storeUserList2(Request $request)
     {
+        $validUserList=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required'
+
+        ]);
+
         $storeUserList2 = new UserList2;
         $storeUserList2->titre = $request->titre;
         $storeUserList2->subtitre = $request->subtitre;
@@ -44,6 +57,16 @@ class BackofficeAboutController extends Controller
     }
     public function storeUserTimeList(Request $request)
     {
+
+        $validTimeList=$request->validate([
+            'chiffre'=>'required',
+            'text1'=>'required',
+            'text2'=>'required',
+            'icon'=>'required',
+            'color'=>'required'
+
+        ]);
+
         $storeUserTimeList = new UserTimeList;
         $storeUserTimeList->chiffre = $request->chiffre;
         $storeUserTimeList->text1 = $request->text1;
@@ -73,6 +96,12 @@ class BackofficeAboutController extends Controller
     }
     public function storeUserList4(Request $request)
     {
+
+        $validUserList4=$request->validate([
+            'titre'=>'required',
+            'chiffre'=>'required'
+        ]);
+
         $storeUserList4 = new UserList4;
         $storeUserList4->titre = $request->titre;
         $storeUserList4->chiffre = $request->chiffre;
@@ -95,6 +124,12 @@ class BackofficeAboutController extends Controller
 
     public function updateUserList1(Request $request, $id)
     {
+        $validUserList1=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required',
+
+        ]);
+
         $updateUserList1 = UserList1::find($id);
         $updateUserList1->titre = $request->titre;
         $updateUserList1->subtitre = $request->subtitre;
@@ -108,6 +143,12 @@ class BackofficeAboutController extends Controller
 
     public function updateUserList2(Request $request, $id)
     {
+        $validTimeList=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required',
+
+        ]);
+
         $updateUserList2 = UserList2::find($id);
         $updateUserList2->titre = $request->titre;
         $updateUserList2->subtitre = $request->subtitre;
@@ -121,6 +162,12 @@ class BackofficeAboutController extends Controller
 
     public function updateUserList4(Request $request, $id)
     {
+        $validUserList4=$request->validate([
+            'titre'=>'required',
+            'chiffre'=>'required',
+
+        ]);
+
         $updateUserList4 = UserList4::find($id);
         $updateUserList4->titre = $request->titre;
         $updateUserList4->chiffre = $request->chiffre;
@@ -134,6 +181,12 @@ class BackofficeAboutController extends Controller
 
     public function updateUserTimeList(Request $request, $id)
     {
+        $validTimeList=$request->validate([
+            'titre'=>'required',
+            'chiffre'=>'required',
+
+        ]);
+
         $updateUserTimeList4 = UserList4::find($id);
         $updateUserTimeList4->titre = $request->titre;
         $updateUserTimeList4->chiffre = $request->chiffre;

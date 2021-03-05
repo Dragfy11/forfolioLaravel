@@ -10,15 +10,24 @@
 <body>
 
     <div class="container mt-5">
-    <form action="/backoffice-updateTitre/{{$editTitre->id}}" method="post">
+      @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
+    <form action="/backoffice-updateTitre/{{$editHeader->id}}" method="post">
             @csrf
             <div class="form-group">
-              <label for="exampleInputEmail1">titre</label>
-            <input type="text" name="titre" value="{{$editTitre->titre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="exampleInputEmail1">ref</label>
+            <input type="text" name="ref" value="{{old("ref") ? old("ref") :$editHeader->ref}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">subtitre</label>
-            <input type="text" name="subtitre" value="{{$editTitre->subtitre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1">titre</label>
+            <input type="text" name="titre" value="{{old("titre") ? old("titre") :$editHeader->titre}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
