@@ -20,12 +20,12 @@
         @foreach ($imagePortfolios as $item)
           <div class="col-lg-4 col-md-6 portfolio-item {{$item->filter}}">
             <div class="portfolio-wrap">
-              <img src="{{asset($item->imgsrc)}}" class="img-fluid" alt="">
+              <img src="{{asset("/storage/img/".$item->imgsrc)}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>{{$item->titre1}}</h4>
                 <p>{{$item->desc}}</p>
                 <div class="portfolio-links">
-                  <a href="{{asset($item->imgsrc)}}" data-gall="portfolioGallery" class="venobox" title="{{$item->titre}}"><i class="bx bx-plus"></i></a>
+                  <a href="{{asset("/storage/img/".$item->imgsrc)}}" data-gall="portfolioGallery" class="venobox" title="{{$item->titre}}"><i class="bx bx-plus"></i></a>
                   <a href="{{$item->ref}}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
