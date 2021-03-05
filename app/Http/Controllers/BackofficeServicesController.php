@@ -15,6 +15,12 @@ class BackofficeServicesController extends Controller
     }
     public function storeService1(Request $request)
     {
+
+        $validService1=$request->validate([
+            'ref'=>'required',
+            'titre'=>'required',
+        ]);
+
         $storeService1 = new Service1;
         $storeService1->ref = $request->ref;
         $storeService1->titre = $request->titre;
@@ -23,12 +29,19 @@ class BackofficeServicesController extends Controller
     }
     public function storeService2(Request $request)
     {
+
+        $validService2=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required',
+            'text'=>'required',
+            'imgsrc'=>'required'
+        ]);
+
         $storeService2 = new Service2;
         $storeService2->titre = $request->titre;
         $storeService2->subtitre = $request->subtitre;
-        $storeService2->copy = $request->copy;
-        $storeService2->designed = $request->designed;
-        $storeService2->img = $request->img;
+        $storeService2->text = $request->text;
+        $storeService2->imgsrc = $request->imgsrc;
         $storeService2->save();
         return redirect()->back();
     }
@@ -57,6 +70,14 @@ class BackofficeServicesController extends Controller
 
     public function updateService1(Request $request, $id)
     {
+
+        $validService1=$request->validate([
+            'titre'=>'required',
+            'text'=>'required',
+            'icon'=>'required',
+        ]);
+
+
         $updateService1 = Service1::find($id);
         $updateService1->titre = $request->titre;
         $updateService1->text = $request->text;
@@ -71,9 +92,19 @@ class BackofficeServicesController extends Controller
 
     public function updateService2(Request $request, $id)
     {
+
+        $validService2=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required',
+            'text'=>'required',
+            'imgsrc'=>'required'
+        ]);
+
+
         $updateService2 = Service2::find($id);
         $updateService2->titre = $request->titre;
         $updateService2->subtitre = $request->subtitre;
+        $updateService2->text = $request->text;
         $updateService2->imgsrc = $request->imgsrc;
         $updateService2->save();
         return redirect()->back();

@@ -18,6 +18,11 @@ class BackofficeController extends Controller
     
     public function storeHeader(Request $request)
     {
+        $validHeader=$request->validate([
+            'ref'=>'required',
+            'titre'=>'required',
+        ]);
+
         $storeHeader = new Header;
         $storeHeader->ref = $request->ref;
         $storeHeader->titre = $request->titre;
@@ -26,6 +31,16 @@ class BackofficeController extends Controller
     }
     public function storeFooter(Request $request)
     {
+
+
+        $validFooter=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required',
+            'copy'=>'required',
+            'designed'=>'required',
+            'img'=>'required'
+        ]);
+
         $storeFooter = new Footer;
         $storeFooter->titre = $request->titre;
         $storeFooter->subtitre = $request->subtitre;
@@ -37,6 +52,11 @@ class BackofficeController extends Controller
     }
     public function storeTitre(Request $request)
     {
+        $validTitre=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required',
+        ]);
+
         $storeTitre = new Titre;
         $storeTitre->titre = $request->titre;
         $storeTitre->subtitre = $request->subtitre;
@@ -77,6 +97,12 @@ class BackofficeController extends Controller
 
     public function updateHeader(Request $request, $id)
     {
+
+        $validHeader=$request->validate([
+            'ref'=>'required',
+            'titre'=>'required',
+        ]);
+
         $updateHeader = Header::find($id);
         $updateHeader->ref = $request->ref;
         $updateHeader->titre = $request->titre;
@@ -90,6 +116,15 @@ class BackofficeController extends Controller
 
     public function updateFooter(Request $request, $id)
     {
+
+        $validFooter=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required',
+            'copy'=>'required',
+            'designed'=>'required',
+            'img'=>'required'
+        ]);
+
         $updateFooter = Footer::find($id);
         $updateFooter->titre = $request->titre;
         $updateFooter->subtitre = $request->subtitre;
@@ -106,6 +141,12 @@ class BackofficeController extends Controller
 
     public function updateTitre(Request $request, $id)
     {
+
+        $validTitre=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required',
+        ]);
+
         $updateTitre = Titre::find($id);
         $updateTitre->titre = $request->titre;
         $updateTitre->subtitre = $request->subtitre;

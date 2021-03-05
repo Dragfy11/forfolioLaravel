@@ -21,6 +21,19 @@ class BackofficePortfolioController extends Controller
 
     public function storePricings(Request $request)
     {
+
+        $validPricing=$request->validate([
+            'titre'=>'required',
+            'chiffre'=>'required',
+            'text1'=>'required',
+            'text2'=>'required',
+            'text3'=>'required',
+            'text4'=>'required',
+            'text5'=>'required',
+            'text6'=>'required',
+            'btn'=>'required'
+        ]);
+
         $storePricings = new Pricing;
         $storePricings->titre = $request->titre;
         $storePricings->chiffre = $request->chiffre;
@@ -50,6 +63,19 @@ class BackofficePortfolioController extends Controller
 
     public function updatePricings(Request $request, $id)
     {
+
+        $validPricings=$request->validate([
+            'titre'=>'required',
+            'chiffre'=>'required',
+            'text1'=>'required',
+            'text2'=>'required',
+            'text3'=>'required',
+            'text4'=>'required',
+            'text5'=>'required',
+            'text6'=>'required',
+            'btn'=>'required'
+        ]);
+
         $updatePricings = Pricing::find($id);
         $updatePricings->titre = $request->titre;
         $updatePricings->chiffre = $request->chiffre;
@@ -72,6 +98,15 @@ class BackofficePortfolioController extends Controller
 
     public function storePortfolioImg(Request $request)
     {
+        $validPortfolioImg=$request->validate([
+            'filter'=>'required',
+            'imgsrc'=>'required',
+            'titre1'=>'required',
+            'desc'=>'required',
+            'titre2'=>'required',
+            'ref'=>'required'
+        ]);
+
         $storePortfolioImg = new ImagePortfolio;
         $storePortfolioImg->filter = $request->filter;
         $storePortfolioImg->imgsrc = $request->file('imgsrc')->hashName();
@@ -99,6 +134,17 @@ class BackofficePortfolioController extends Controller
 
     public function updatePortfolioImg(Request $request, $id)
     {
+        $validPortfolioImg=$request->validate([
+            'filter'=>'required',
+            'imgsrc'=>'required',
+            'titre1'=>'required',
+            'desc'=>'required',
+            'titre2'=>'required',
+            'ref'=>'required'
+        ]);
+
+
+
         $updatePortfolioImg = ImagePortfolio::find($id);
         $updatePortfolioImg->filter = $request->filter;
         $updatePortfolioImg->imgsrc = $request->imgsrc;
@@ -120,6 +166,11 @@ class BackofficePortfolioController extends Controller
 
     public function storePortfolioTitre(Request $request)
     {
+
+        $validPortfolioTitre=$request->validate([
+            'titre'=>'required'
+        ]);
+
         $storePortfolioTitre = new TitrePortfolio;
         $storePortfolioTitre->titre = $request->titre;
         $storePortfolioTitre->save();
@@ -141,6 +192,10 @@ class BackofficePortfolioController extends Controller
 
     public function updatePortfolioTitre(Request $request, $id)
     {
+        $validPortfolioTitre=$request->validate([
+            'titre'=>'required'
+        ]);
+
         $updatePortfolioTitre = TitrePortfolio::find($id);
         $updatePortfolioTitre->titre = $request->titre;
         $updatePortfolioTitre->save();

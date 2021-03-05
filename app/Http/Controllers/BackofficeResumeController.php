@@ -21,6 +21,14 @@ class BackofficeResumeController extends Controller
     }
     public function storeResumeTitre(Request $request)
     {
+
+        $validResumeTitre2=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required',
+            'text'=>'required',
+        ]);
+
+
         $storeResumeTitre = new ResumeTitre;
         $storeResumeTitre->titre = $request->titre;
         $storeResumeTitre->subtitre = $request->subtitre;
@@ -44,6 +52,13 @@ class BackofficeResumeController extends Controller
 
     public function updateResumeTitre(Request $request, $id)
     {
+
+        $validResumeTitre=$request->validate([
+            'titre'=>'required',
+            'subtitre'=>'required',
+            'text'=>'required',
+        ]);
+
         $updateResumeTitre = ResumeTitre::find($id);
         $updateResumeTitre->titre = $request->titre;
         $updateResumeTitre->subtitre = $request->subtitre;
@@ -61,6 +76,12 @@ class BackofficeResumeController extends Controller
 
     public function storeResumeTitre2(Request $request)
     {
+
+        $validResumeTitre2=$request->validate([
+            'titre'=>'required',
+        ]);
+
+
         $storeResumeTitre2 = new ResumeTitre2;
         $storeResumeTitre2->titre = $request->titre;
         $storeResumeTitre2->save();
@@ -82,10 +103,13 @@ class BackofficeResumeController extends Controller
 
     public function updateResumeTitre2(Request $request, $id)
     {
+        $validResumeTitre2=$request->validate([
+            'titre'=>'required',
+        ]);
+
+
         $updateResumeTitre2 = ResumeTitre2::find($id);
         $updateResumeTitre2->titre = $request->titre;
-        $updateResumeTitre2->subtitre = $request->subtitre;
-        $updateResumeTitre2->text = $request->text;
         $updateResumeTitre2->save();
         return redirect()->back();
     }
@@ -100,6 +124,11 @@ class BackofficeResumeController extends Controller
 
     public function storeResumeList1(Request $request)
     {
+
+        $validResumeList1=$request->validate([
+            'text'=>'required',
+        ]);
+
         $storeResumeList1 = new ResumeList1;
         $storeResumeList1->text = $request->text;
         $storeResumeList1->save();
@@ -121,6 +150,11 @@ class BackofficeResumeController extends Controller
 
     public function updateResumeList1(Request $request, $id)
     {
+
+        $validResumeList1=$request->validate([
+            'text'=>'required',
+        ]);
+
         $updateResumeList1 = ResumeList1::find($id);
         $updateResumeList1->text = $request->text;
         $updateResumeList1->save();
@@ -136,6 +170,14 @@ class BackofficeResumeController extends Controller
 
     public function storeResume2(Request $request)
     {
+
+        $validResume2=$request->validate([
+            'titre1'=>'required',
+            'titre2'=>'required',
+            'text1'=>'required',
+            'text2'=>'required',
+        ]);
+
         $storeResume2 = new Resume2;
         $storeResume2->titre1 = $request->titre1;
         $storeResume2->titre2 = $request->titre2;
@@ -160,6 +202,14 @@ class BackofficeResumeController extends Controller
 
     public function updateResume2(Request $request, $id)
     {
+
+        $validResume2=$request->validate([
+            'titre1'=>'required',
+            'titre2'=>'required',
+            'text1'=>'required',
+            'text2'=>'required',
+        ]);
+
         $updateResume2 = Resume2::find($id);
         $updateResume2->titre1 = $request->titre1;
         $updateResume2->titre2 = $request->titre2;
@@ -177,6 +227,17 @@ class BackofficeResumeController extends Controller
 
     public function storeResume3(Request $request)
     {
+
+        $validation=$request->validate([
+            'titre'=>'required',
+            'subtitre1'=>'required',
+            'subtitre2'=>'required',
+            'text1'=>'required',
+            'text2'=>'required',
+            'text3'=>'required',
+            'text4'=>'required',
+        ]);
+
         $storeResume3 = new Resume3;
         $storeResume3->titre = $request->titre;
         $storeResume3->subtitre1 = $request->subtitre1;
@@ -204,6 +265,17 @@ class BackofficeResumeController extends Controller
 
     public function updateResume3(Request $request, $id)
     {
+
+        $validation=$request->validate([
+            'titre'=>'required',
+            'subtitre1'=>'required',
+            'subtitre2'=>'required',
+            'text1'=>'required',
+            'text2'=>'required',
+            'text3'=>'required',
+            'text4'=>'required',
+        ]);
+
         $updateResume3 = Resume3::find($id);
         $updateResume3->titre = $request->titre;
         $updateResume3->subtitre1 = $request->subtitre1;
@@ -215,11 +287,6 @@ class BackofficeResumeController extends Controller
         $updateResume3->save();
         return redirect()->back();
     }
-
-
-
-
-
 
 
 }

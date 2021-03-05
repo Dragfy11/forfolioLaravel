@@ -17,6 +17,13 @@ class BackofficeContactController extends Controller
     }
     public function storeContact1(Request $request)
     {
+
+        $validContact1=$request->validate([
+            'ref'=>'required',
+            'class'=>'required',
+            'icon'=>'required',
+        ]);
+
         $storeContact1 = new Contact1;
         $storeContact1->ref = $request->ref;
         $storeContact1->class = $request->class;
@@ -26,6 +33,14 @@ class BackofficeContactController extends Controller
     }
     public function storeContact2(Request $request)
     {
+
+        $validContact2=$request->validate([
+            'icon'=>'required',
+            'titre'=>'required',
+            'text'=>'required',
+    
+        ]);
+
         $storeContact2 = new Contact2;
         $storeContact2->icon = $request->icon;
         $storeContact2->titre = $request->titre;
@@ -35,6 +50,12 @@ class BackofficeContactController extends Controller
     }
     public function storeContactIcon(Request $request)
     {
+
+        $validContactIcon=$request->validate([
+            'icon'=>'required',
+            'titre'=>'required',
+        ]);
+
         $storeContactIcon = new ContactIcon;
         $storeContactIcon->icon = $request->icon;
         $storeContactIcon->titre = $request->titre;
@@ -75,6 +96,13 @@ class BackofficeContactController extends Controller
 
     public function updateContact1(Request $request, $id)
     {
+
+        $validContact1=$request->validate([
+            'ref'=>'required',
+            'class'=>'required',
+            'icon'=>'class',
+        ]);
+
         $updateContact1 = Contact1::find($id);
         $updateContact1->ref = $request->ref;
         $updateContact1->class = $request->class;
@@ -89,6 +117,13 @@ class BackofficeContactController extends Controller
 
     public function updateContact2(Request $request, $id)
     {
+
+        $validContact2=$request->validate([
+            'icon'=>'required',
+            'subtitre'=>'required',
+            'text'=>'required',
+        ]);
+
         $updateContact2 = Contact2::find($id);
         $updateContact2->icon = $request->icon;
         $updateContact2->titre = $request->titre;
@@ -103,6 +138,12 @@ class BackofficeContactController extends Controller
 
     public function updateContactIcon(Request $request, $id)
     {
+
+        $validContactIcon=$request->validate([
+            'icon'=>'required',
+            'subtitre'=>'required',
+        ]);
+
         $updateContactIcon = ContactIcon::find($id);
         $updateContactIcon->icon = $request->icon;
         $updateContactIcon->titre = $request->titre;
